@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/ui/RegistroFrame.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/ui/ProductoFormFrame.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/ui/PagoFrame.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/ui/LoginFrame.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/ui/HistorialFrame.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/ui/ClienteFrame.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/ui/AdminFrame.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Usuario.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Ropa.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Producto.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Pedido.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/PagoTransferencia.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/PagoTarjeta.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/PagoEfectivo.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Pago.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/ItemCarrito.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Cliente.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Carrito.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Calzado.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Accesorio.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/modelo/Administrador.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/excepciones/StockInsuficienteException.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/excepciones/ProductoNoEncontradoException.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/excepciones/AutenticacionException.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/datos/Tienda.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/datos/GestorDatos.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documentos/StyleStore/src/Main.java</file>
+        </group>
+    </open-files>
+</project-private>
