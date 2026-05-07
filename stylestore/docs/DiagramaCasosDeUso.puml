@@ -1,0 +1,143 @@
+@startuml DiagramaCasosDeUso_StyleStore
+title Diagrama de Casos de Uso — StyleStore
+
+left to right direction
+
+skinparam backgroundColor #FAFAFA
+skinparam usecase {
+    BackgroundColor #EAF2F8
+    BorderColor #2471A3
+    ArrowColor #1A5276
+    ActorBorderColor #1A5276
+    ActorBackgroundColor #D6EAF8
+    ActorFontStyle bold
+}
+skinparam rectangle {
+    BorderColor #2471A3
+    BackgroundColor #F8FBFF
+    FontStyle bold
+    FontColor #1A5276
+}
+
+' ========================
+' ACTORES
+' ========================
+
+actor "Cliente" as CLI
+actor "Administrador" as ADM
+actor "Sistema\n(GestorDatos)" as SIS
+
+' ========================
+' SISTEMA
+' ========================
+
+rectangle "StyleStore — Sistema de Tienda de Ropa" {
+
+    ' --- Autenticación ---
+    package "Autenticación" {
+        usecase "Registrarse" as UC1
+        usecase "Iniciar Sesión" as UC2
+        usecase "Cerrar Sesión" as UC3
+        usecase "Validar credenciales" as UC2a
+    }
+
+    ' --- Catálogo ---
+    package "Catálogo de Productos" {
+        usecase "Ver catálogo de productos" as UC4
+        usecase "Buscar productos" as UC5
+        usecase "Ver detalle de producto" as UC6
+        usecase "Filtrar por categoría" as UC7
+    }
+
+    ' --- Carrito y Compra ---
+    package "Carrito y Compra" {
+        usecase "Agregar producto al carrito" as UC8
+        usecase "Ver carrito" as UC9
+        usecase "Eliminar producto del carrito" as UC10
+        usecase "Actualizar cantidad" as UC11
+        usecase "Confirmar compra" as UC12
+        usecase "Verificar stock disponible" as UC13
+    }
+
+    ' --- Pago ---
+    package "Métodos de Pago" {
+        usecase "Pagar con tarjeta" as UC14
+        usecase "Pagar en efectivo" as UC15
+        usecase "Pagar por transferencia" as UC16
+        usecase "Generar pedido" as UC17
+    }
+
+    ' --- Historial ---
+    package "Historial" {
+        usecase "Ver historial de pedidos" as UC18
+        usecase "Ver resumen de pedido" as UC19
+    }
+
+    ' --- Admin ---
+    package "Gestión Administrativa" {
+        usecase "Agregar producto" as UC20
+        usecase "Editar producto" as UC21
+        usecase "Eliminar producto" as UC22
+        usecase "Ver todos los pedidos" as UC23
+        usecase "Cambiar estado de pedido" as UC24
+        usecase "Ver lista de usuarios" as UC25
+        usecase "Persistir datos\n(Serialización)" as UC26
+    }
+}
+
+' ========================
+' RELACIONES CLIENTE
+' ========================
+
+CLI --> UC1
+CLI --> UC2
+CLI --> UC3
+CLI --> UC4
+CLI --> UC5
+CLI --> UC6
+CLI --> UC7
+CLI --> UC8
+CLI --> UC9
+CLI --> UC10
+CLI --> UC11
+CLI --> UC12
+CLI --> UC18
+CLI --> UC19
+
+' ========================
+' RELACIONES ADMINISTRADOR
+' ========================
+
+ADM --> UC2
+ADM --> UC3
+ADM --> UC4
+ADM --> UC20
+ADM --> UC21
+ADM --> UC22
+ADM --> UC23
+ADM --> UC24
+ADM --> UC25
+
+' ========================
+' RELACIONES SISTEMA (INCLUDE/EXTEND)
+' ========================
+
+UC2 ..> UC2a : <<include>>
+UC8 ..> UC13 : <<include>>
+UC12 ..> UC13 : <<include>>
+UC12 ..> UC17 : <<include>>
+
+UC14 ..> UC12 : <<extend>>
+UC15 ..> UC12 : <<extend>>
+UC16 ..> UC12 : <<extend>>
+
+UC17 ..> UC26 : <<include>>
+UC20 ..> UC26 : <<include>>
+UC21 ..> UC26 : <<include>>
+UC22 ..> UC26 : <<include>>
+UC1  ..> UC26 : <<include>>
+
+SIS --> UC26
+SIS --> UC13
+
+@enduml
