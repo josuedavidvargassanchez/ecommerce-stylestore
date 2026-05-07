@@ -3,15 +3,13 @@
 Proyecto final — Java POO · Curso 1603 · 2026
 
 ---
-
-## 👥 Integrantes
-
+# 👥 Integrantes
 | Nombre | GitHub |
 |---|---|
 | Josué David Vargas Sánchez | [@josuedavidvargassanchez](https://github.com/josuedavidvargassanchez) |
-|   Jhojaner Gueto Arevalo   | [
+| Jhojaner Gueto Arevalo | [@jhojanergueto](https://github.com/jhojanergueto) |
+| Jesús Rafael Romero Marrugo | [@Jesusromero-ops](https://github.com/Jesusromero-ops) |
 ---
-
 ## 📋 Descripción
 
 StyleStore es un sistema de comercio electrónico desarrollado en Java que permite gestionar productos de moda (ropa, calzado y accesorios), registrar usuarios, realizar compras mediante un carrito y procesar pedidos con distintos métodos de pago. Los datos persisten entre sesiones mediante serialización de archivos `.dat`.
