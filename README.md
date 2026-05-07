@@ -9,7 +9,7 @@ Proyecto final — Java POO · Curso 1603 · 2026
 | Nombre | GitHub |
 |---|---|
 | Josué David Vargas Sánchez | [@josuedavidvargassanchez](https://github.com/josuedavidvargassanchez) |
-
+|   Jhojaner Gueto Arevalo   | [
 ---
 
 ## 📋 Descripción
