@@ -1,16 +1,12 @@
 package modelo;
 
-/**
- * Producto de tipo Calzado.
- * Aplica: Herencia (extends Producto), Polimorfismo (@Override)
- */
 public class Calzado extends Producto {
     private static final long serialVersionUID = 1L;
 
-    private int numeracion;   // 36, 37, 38... 45
+    private int numeracion;   
     private String color;
-    private String material;  // cuero, lona, sintético
-    private String genero;    // Hombre, Mujer, Unisex, Niño
+    private String material;  
+    private String genero;    
 
     public Calzado(String id, String nombre, String descripcion, double precio,
                    int stock, String categoria, String marca,
@@ -33,7 +29,6 @@ public class Calzado extends Producto {
                " | Material: " + material + " | Género: " + genero;
     }
 
-    // Getters y Setters
     public int getNumeracion() { return numeracion; }
     public void setNumeracion(int numeracion) { this.numeracion = numeracion; }
     public String getColor() { return color; }

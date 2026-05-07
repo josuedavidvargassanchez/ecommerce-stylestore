@@ -4,18 +4,12 @@ import modelo.*;
 import java.io.*;
 import java.util.ArrayList;
 
-/**
- * Capa de persistencia — guarda y carga datos usando serialización Java (.dat).
- * Aplica: Manejo de Excepciones (try/catch)
- */
 public class GestorDatos {
 
     private static final String DIR_DATOS = "datos/";
     private static final String ARCHIVO_PRODUCTOS = DIR_DATOS + "productos.dat";
     private static final String ARCHIVO_USUARIOS = DIR_DATOS + "usuarios.dat";
     private static final String ARCHIVO_PEDIDOS = DIR_DATOS + "pedidos.dat";
-
-    // ─── PRODUCTOS ──────────────────────────────────────────────
 
     @SuppressWarnings("unchecked")
     public static ArrayList<Producto> cargarProductos() {
@@ -40,8 +34,6 @@ public class GestorDatos {
         }
     }
 
-    // ─── USUARIOS ───────────────────────────────────────────────
-
     @SuppressWarnings("unchecked")
     public static ArrayList<Usuario> cargarUsuarios() {
         try (ObjectInputStream ois = new ObjectInputStream(
@@ -65,8 +57,6 @@ public class GestorDatos {
         }
     }
 
-    // ─── PEDIDOS ────────────────────────────────────────────────
-
     @SuppressWarnings("unchecked")
     public static ArrayList<Pedido> cargarPedidos() {
         try (ObjectInputStream ois = new ObjectInputStream(
@@ -89,8 +79,6 @@ public class GestorDatos {
             System.err.println("Error al guardar pedidos: " + e.getMessage());
         }
     }
-
-    // ─── UTILIDAD ───────────────────────────────────────────────
 
     private static void crearDirectorioSiNoExiste() {
         File dir = new File(DIR_DATOS);

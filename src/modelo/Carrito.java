@@ -4,10 +4,6 @@ import excepciones.StockInsuficienteException;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- * Carrito de compras del cliente.
- * Aplica: Colecciones (ArrayList), Excepciones
- */
 public class Carrito implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -25,7 +21,6 @@ public class Carrito implements Serializable {
                 "\". Disponible: " + producto.getStock()
             );
         }
-        // Si ya existe en el carrito, sumar cantidad
         for (ItemCarrito item : items) {
             if (item.getProducto().getId().equals(producto.getId())) {
                 int nuevaCantidad = item.getCantidad() + cantidad;

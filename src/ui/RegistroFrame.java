@@ -5,9 +5,6 @@ import excepciones.AutenticacionException;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Pantalla de registro de nuevo cliente.
- */
 public class RegistroFrame extends JFrame {
 
     private Tienda tienda;
@@ -43,21 +40,18 @@ public class RegistroFrame extends JFrame {
         String[] labels = {"Nombre completo:", "Email:", "Contraseña:", "Confirmar contraseña:", "Dirección:", "Teléfono:"};
         gbc.insets = new Insets(5, 4, 2, 4);
 
-        // Nombre
         gbc.gridy = 1;
         panel.add(crearLabel("Nombre completo:"), gbc);
         gbc.gridy = 2;
         txtNombre = crearTextField();
         panel.add(txtNombre, gbc);
 
-        // Email
         gbc.gridy = 3;
         panel.add(crearLabel("Email:"), gbc);
         gbc.gridy = 4;
         txtEmail = crearTextField();
         panel.add(txtEmail, gbc);
 
-        // Password
         gbc.gridy = 5;
         panel.add(crearLabel("Contraseña:"), gbc);
         gbc.gridy = 6;
@@ -65,7 +59,6 @@ public class RegistroFrame extends JFrame {
         estilizarCampo(txtPassword);
         panel.add(txtPassword, gbc);
 
-        // Confirmar password
         gbc.gridy = 7;
         panel.add(crearLabel("Confirmar contraseña:"), gbc);
         gbc.gridy = 8;
@@ -73,21 +66,18 @@ public class RegistroFrame extends JFrame {
         estilizarCampo(txtConfirmar);
         panel.add(txtConfirmar, gbc);
 
-        // Dirección
         gbc.gridy = 9;
         panel.add(crearLabel("Dirección:"), gbc);
         gbc.gridy = 10;
         txtDireccion = crearTextField();
         panel.add(txtDireccion, gbc);
 
-        // Teléfono
         gbc.gridy = 11;
         panel.add(crearLabel("Teléfono:"), gbc);
         gbc.gridy = 12;
         txtTelefono = crearTextField();
         panel.add(txtTelefono, gbc);
 
-        // Botón registrar
         gbc.gridy = 13;
         gbc.insets = new Insets(20, 4, 6, 4);
         JButton btnRegistrar = new JButton("Crear cuenta");
@@ -100,7 +90,6 @@ public class RegistroFrame extends JFrame {
         btnRegistrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         panel.add(btnRegistrar, gbc);
 
-        // Volver al login
         gbc.gridy = 14;
         gbc.insets = new Insets(4, 4, 4, 4);
         JButton btnVolver = new JButton("Ya tengo cuenta — Iniciar sesión");

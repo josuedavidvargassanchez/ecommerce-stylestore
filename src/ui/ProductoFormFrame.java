@@ -6,9 +6,6 @@ import modelo.*;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Formulario para crear o editar un producto (Admin).
- */
 public class ProductoFormFrame extends JDialog {
 
     private Tienda tienda;
@@ -44,7 +41,6 @@ public class ProductoFormFrame extends JDialog {
         gbc.gridx = 0;
         gbc.insets = new Insets(5, 2, 2, 2);
 
-        // Tipo
         gbc.gridy = 0;
         panel.add(lbl("Tipo de producto:"), gbc);
         gbc.gridy = 1;
@@ -53,12 +49,10 @@ public class ProductoFormFrame extends JDialog {
         cmbTipo.setForeground(Color.WHITE);
         panel.add(cmbTipo, gbc);
 
-        // ID
         gbc.gridy = 2; panel.add(lbl("ID (ej: R001, A001, C001):"), gbc);
         gbc.gridy = 3; txtId = campo(); panel.add(txtId, gbc);
         if (productoEditar != null) txtId.setEnabled(false);
 
-        // Campos comunes
         gbc.gridy = 4; panel.add(lbl("Nombre:"), gbc);
         gbc.gridy = 5; txtNombre = campo(); panel.add(txtNombre, gbc);
         gbc.gridy = 6; panel.add(lbl("Descripción:"), gbc);
@@ -72,7 +66,6 @@ public class ProductoFormFrame extends JDialog {
         gbc.gridy = 14; panel.add(lbl("Stock:"), gbc);
         gbc.gridy = 15; txtStock = campo(); panel.add(txtStock, gbc);
 
-        // Campos específicos dinámicos
         lblEsp1 = lbl("Talla / Tipo:"); gbc.gridy = 16; panel.add(lblEsp1, gbc);
         gbc.gridy = 17; txtEspecifico1 = campo(); panel.add(txtEspecifico1, gbc);
         lblEsp2 = lbl("Color:"); gbc.gridy = 18; panel.add(lblEsp2, gbc);
@@ -82,7 +75,6 @@ public class ProductoFormFrame extends JDialog {
         lblEsp4 = lbl("Género / Dimensiones:"); gbc.gridy = 22; panel.add(lblEsp4, gbc);
         gbc.gridy = 23; txtEspecifico4 = campo(); panel.add(txtEspecifico4, gbc);
 
-        // Botón guardar
         gbc.gridy = 24; gbc.insets = new Insets(18, 2, 2, 2);
         JButton btnGuardar = new JButton(productoEditar == null ? "➕ Crear producto" : "💾 Guardar cambios");
         btnGuardar.setFont(new Font("Arial", Font.BOLD, 14));
@@ -94,7 +86,6 @@ public class ProductoFormFrame extends JDialog {
         btnGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         panel.add(btnGuardar, gbc);
 
-        // Actualizar labels al cambiar tipo
         cmbTipo.addActionListener(e -> actualizarLabels());
         actualizarLabels();
 

@@ -8,9 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 
-/**
- * Panel de administración — gestión de productos, usuarios y pedidos.
- */
 public class AdminFrame extends JFrame {
 
     private Tienda tienda;
@@ -30,7 +27,6 @@ public class AdminFrame extends JFrame {
         setSize(1000, 650);
         setLocationRelativeTo(null);
 
-        // Barra superior
         JPanel panelTop = new JPanel(new BorderLayout());
         panelTop.setBackground(new Color(18, 18, 18));
         panelTop.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
@@ -45,7 +41,6 @@ public class AdminFrame extends JFrame {
         btnCerrar.setBorder(BorderFactory.createEmptyBorder(6, 14, 6, 14));
         panelTop.add(btnCerrar, BorderLayout.EAST);
 
-        // Tabs
         tabbedPane = new JTabbedPane();
         tabbedPane.setBackground(new Color(25, 25, 25));
         tabbedPane.setForeground(Color.WHITE);
@@ -63,7 +58,6 @@ public class AdminFrame extends JFrame {
         });
     }
 
-    // ─── TAB PRODUCTOS ──────────────────────────────────────────
     private JPanel crearPanelProductos() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(new Color(22, 22, 22));
@@ -130,7 +124,6 @@ public class AdminFrame extends JFrame {
         return panel;
     }
 
-    // ─── TAB PEDIDOS ────────────────────────────────────────────
     private JPanel crearPanelPedidos() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(new Color(22, 22, 22));
@@ -153,7 +146,6 @@ public class AdminFrame extends JFrame {
                 new JScrollPane(tablaPedidos), new JScrollPane(areaDetalle));
         split.setDividerLocation(260);
 
-        // Cargar pedidos
         for (Pedido p : tienda.getTodosPedidos()) {
             modeloPedidos.addRow(new Object[]{
                     p.getId(), p.getClienteNombre(), p.getFecha(),
@@ -170,7 +162,6 @@ public class AdminFrame extends JFrame {
             }
         });
 
-        // Cambiar estado
         JPanel panelBotones = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 8));
         panelBotones.setBackground(new Color(22, 22, 22));
         JComboBox<Pedido.EstadoPedido> cmbEstado = new JComboBox<>(Pedido.EstadoPedido.values());
@@ -206,7 +197,6 @@ public class AdminFrame extends JFrame {
         return panel;
     }
 
-    // ─── TAB USUARIOS ───────────────────────────────────────────
     private JPanel crearPanelUsuarios() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(new Color(22, 22, 22));
@@ -228,7 +218,6 @@ public class AdminFrame extends JFrame {
         return panel;
     }
 
-    // ─── UTILIDADES ─────────────────────────────────────────────
     public void cargarProductos() {
         modeloTabla.setRowCount(0);
         for (Producto p : tienda.getProductos()) {

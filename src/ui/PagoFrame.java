@@ -8,9 +8,6 @@ import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Pantalla de pago y confirmación del pedido.
- */
 public class PagoFrame extends JDialog {
 
     private Tienda tienda;
@@ -19,14 +16,11 @@ public class PagoFrame extends JDialog {
     private JPanel panelDatosPago;
     private JTextField txtDireccion;
 
-    // Campos tarjeta
     private JTextField txtNumTarjeta, txtNombreTitular;
     private JComboBox<String> cmbTipoTarjeta;
 
-    // Campos efectivo
     private JTextField txtMontoEntregado;
 
-    // Campos transferencia
     private JTextField txtBanco, txtReferencia;
 
     public PagoFrame(Tienda tienda, ClienteFrame clienteFrame) {
@@ -45,7 +39,6 @@ public class PagoFrame extends JDialog {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBackground(new Color(25, 25, 25));
 
-        // Resumen del carrito
         JPanel panelResumen = new JPanel(new GridLayout(0, 1, 0, 2));
         panelResumen.setBackground(new Color(35, 35, 35));
         panelResumen.setBorder(BorderFactory.createCompoundBorder(
@@ -69,7 +62,6 @@ public class PagoFrame extends JDialog {
         lblTotal.setBorder(BorderFactory.createEmptyBorder(6, 0, 0, 0));
         panelResumen.add(lblTotal);
 
-        // Dirección
         JPanel panelDir = new JPanel(new BorderLayout());
         panelDir.setBackground(new Color(25, 25, 25));
         panelDir.setBorder(BorderFactory.createEmptyBorder(8, 16, 4, 16));
@@ -83,7 +75,6 @@ public class PagoFrame extends JDialog {
         estilizarCampo(txtDireccion);
         panelDir.add(txtDireccion, BorderLayout.CENTER);
 
-        // Método de pago
         JPanel panelMetodo = new JPanel(new BorderLayout());
         panelMetodo.setBackground(new Color(25, 25, 25));
         panelMetodo.setBorder(BorderFactory.createEmptyBorder(8, 16, 4, 16));
@@ -97,12 +88,10 @@ public class PagoFrame extends JDialog {
         cmbMetodo.setForeground(Color.WHITE);
         panelMetodo.add(cmbMetodo, BorderLayout.CENTER);
 
-        // Panel dinámico según método
         panelDatosPago = new JPanel(new CardLayout());
         panelDatosPago.setBackground(new Color(25, 25, 25));
         panelDatosPago.setBorder(BorderFactory.createEmptyBorder(0, 16, 0, 16));
 
-        // Tarjeta
         JPanel panelTarjeta = new JPanel(new GridLayout(0, 1, 0, 6));
         panelTarjeta.setBackground(new Color(25, 25, 25));
         panelTarjeta.add(crearLabel("Número (últimos 4 dígitos):"));
@@ -116,14 +105,12 @@ public class PagoFrame extends JDialog {
         cmbTipoTarjeta.setForeground(Color.WHITE);
         panelTarjeta.add(cmbTipoTarjeta);
 
-        // Efectivo
         JPanel panelEfectivo = new JPanel(new GridLayout(0, 1, 0, 6));
         panelEfectivo.setBackground(new Color(25, 25, 25));
         panelEfectivo.add(crearLabel("Monto entregado ($):"));
         txtMontoEntregado = crearTextField();
         panelEfectivo.add(txtMontoEntregado);
 
-        // Transferencia
         JPanel panelTransferencia = new JPanel(new GridLayout(0, 1, 0, 6));
         panelTransferencia.setBackground(new Color(25, 25, 25));
         panelTransferencia.add(crearLabel("Banco:"));
@@ -143,7 +130,6 @@ public class PagoFrame extends JDialog {
             ((CardLayout) panelDatosPago.getLayout()).show(panelDatosPago, seleccion);
         });
 
-        // Botón confirmar
         JPanel panelBtn = new JPanel(new FlowLayout(FlowLayout.CENTER));
         panelBtn.setBackground(new Color(25, 25, 25));
         panelBtn.setBorder(BorderFactory.createEmptyBorder(10, 0, 16, 0));
@@ -156,7 +142,6 @@ public class PagoFrame extends JDialog {
         btnConfirmar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         panelBtn.add(btnConfirmar);
 
-        // Armar layout
         JPanel panelCentro = new JPanel();
         panelCentro.setLayout(new BoxLayout(panelCentro, BoxLayout.Y_AXIS));
         panelCentro.setBackground(new Color(25, 25, 25));

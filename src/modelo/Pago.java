@@ -2,10 +2,6 @@ package modelo;
 
 import java.io.Serializable;
 
-/**
- * Clase abstracta para métodos de pago.
- * Aplica: Abstracción, Polimorfismo
- */
 public abstract class Pago implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -17,7 +13,6 @@ public abstract class Pago implements Serializable {
         this.fecha = fecha;
     }
 
-    // Método abstracto — cada tipo de pago lo implementa
     public abstract String procesarPago();
 
     public abstract String getTipoPago();

@@ -8,9 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
 
-/**
- * Pantalla de historial de pedidos del cliente.
- */
 public class HistorialFrame extends JFrame {
 
     private Tienda tienda;
@@ -39,7 +36,6 @@ public class HistorialFrame extends JFrame {
         titulo.setBorder(BorderFactory.createEmptyBorder(12, 10, 12, 10));
         panel.add(titulo, BorderLayout.NORTH);
 
-        // Tabla de pedidos
         String[] cols = {"# Pedido", "Fecha", "Estado", "Total", "Pago"};
         modeloTabla = new DefaultTableModel(cols, 0) {
             public boolean isCellEditable(int r, int c) { return false; }
@@ -57,7 +53,6 @@ public class HistorialFrame extends JFrame {
         tablaPedidos.getTableHeader().setFont(new Font("Arial", Font.BOLD, 13));
         tablaPedidos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-        // Área de detalle
         areaDetalle = new JTextArea();
         areaDetalle.setEditable(false);
         areaDetalle.setBackground(new Color(35, 35, 35));

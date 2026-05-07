@@ -7,9 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-/**
- * Pantalla de Login y Registro.
- */
 public class LoginFrame extends JFrame {
 
     private Tienda tienda;
@@ -31,18 +28,16 @@ public class LoginFrame extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        // Panel principal
         JPanel panelPrincipal = new JPanel(new BorderLayout());
         panelPrincipal.setBackground(new Color(18, 18, 18));
 
-        // Encabezado
         JPanel panelHeader = new JPanel(new BorderLayout());
         panelHeader.setBackground(new Color(18, 18, 18));
         panelHeader.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
 
         lblTitulo = new JLabel("👗 StyleStore", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 28));
-        lblTitulo.setForeground(new Color(212, 175, 55)); // Dorado
+        lblTitulo.setForeground(new Color(212, 175, 55)); 
         panelHeader.add(lblTitulo, BorderLayout.CENTER);
 
         JLabel lblSubtitulo = new JLabel("Tu tienda de moda online", SwingConstants.CENTER);
@@ -50,7 +45,6 @@ public class LoginFrame extends JFrame {
         lblSubtitulo.setForeground(new Color(150, 150, 150));
         panelHeader.add(lblSubtitulo, BorderLayout.SOUTH);
 
-        // Panel formulario
         JPanel panelForm = new JPanel(new GridBagLayout());
         panelForm.setBackground(new Color(30, 30, 30));
         panelForm.setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
@@ -58,7 +52,6 @@ public class LoginFrame extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(6, 4, 6, 4);
 
-        // Email
         gbc.gridx = 0; gbc.gridy = 0;
         JLabel lblEmail = new JLabel("Email:");
         lblEmail.setForeground(Color.WHITE);
@@ -77,7 +70,6 @@ public class LoginFrame extends JFrame {
                 BorderFactory.createEmptyBorder(4, 8, 4, 8)));
         panelForm.add(txtEmail, gbc);
 
-        // Password
         gbc.gridy = 2;
         JLabel lblPass = new JLabel("Contraseña:");
         lblPass.setForeground(Color.WHITE);
@@ -96,7 +88,6 @@ public class LoginFrame extends JFrame {
                 BorderFactory.createEmptyBorder(4, 8, 4, 8)));
         panelForm.add(txtPassword, gbc);
 
-        // Botones
         gbc.gridy = 4;
         gbc.insets = new Insets(16, 4, 4, 4);
         btnLogin = new JButton("Iniciar Sesión");
@@ -124,7 +115,6 @@ public class LoginFrame extends JFrame {
         panelPrincipal.add(panelForm, BorderLayout.CENTER);
         add(panelPrincipal);
 
-        // Acciones
         btnLogin.addActionListener(e -> intentarLogin());
         txtPassword.addActionListener(e -> intentarLogin());
 

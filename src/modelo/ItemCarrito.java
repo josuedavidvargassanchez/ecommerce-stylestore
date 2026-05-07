@@ -2,9 +2,6 @@ package modelo;
 
 import java.io.Serializable;
 
-/**
- * Representa un ítem dentro del carrito de compras.
- */
 public class ItemCarrito implements Serializable {
     private static final long serialVersionUID = 1L;
 

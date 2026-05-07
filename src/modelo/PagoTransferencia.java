@@ -1,9 +1,5 @@
 package modelo;
 
-/**
- * Pago por transferencia bancaria.
- * Aplica: Herencia, Polimorfismo (@Override)
- */
 public class PagoTransferencia extends Pago {
     private static final long serialVersionUID = 1L;
 

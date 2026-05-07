@@ -9,9 +9,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
-/**
- * Pantalla principal para el cliente — catálogo, carrito e historial.
- */
 public class ClienteFrame extends JFrame {
 
     private Tienda tienda;
@@ -36,7 +33,6 @@ public class ClienteFrame extends JFrame {
         setSize(1100, 700);
         setLocationRelativeTo(null);
 
-        // ─── BARRA SUPERIOR ─────────────────────────────────────
         JPanel panelTop = new JPanel(new BorderLayout());
         panelTop.setBackground(new Color(18, 18, 18));
         panelTop.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
@@ -55,7 +51,6 @@ public class ClienteFrame extends JFrame {
         btnCerrarSesion.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         panelTop.add(btnCerrarSesion, BorderLayout.EAST);
 
-        // ─── PANEL BÚSQUEDA Y FILTROS ────────────────────────────
         JPanel panelBusqueda = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 8));
         panelBusqueda.setBackground(new Color(25, 25, 25));
         panelBusqueda.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
@@ -103,12 +98,10 @@ public class ClienteFrame extends JFrame {
         btnHistorial.setBorder(BorderFactory.createEmptyBorder(6, 14, 6, 14));
         panelBusqueda.add(btnHistorial);
 
-        // ─── PANEL CENTRAL ──────────────────────────────────────
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
         splitPane.setDividerLocation(660);
         splitPane.setDividerSize(4);
 
-        // Tabla productos
         String[] colsProductos = {"ID", "Tipo", "Nombre", "Marca", "Precio", "Stock", "Detalles"};
         modeloTabla = new DefaultTableModel(colsProductos, 0) {
             public boolean isCellEditable(int row, int col) { return false; }
@@ -154,7 +147,6 @@ public class ClienteFrame extends JFrame {
 
         panelIzq.add(panelBtnAgregar, BorderLayout.SOUTH);
 
-        // Panel carrito
         JPanel panelDer = new JPanel(new BorderLayout());
         panelDer.setBackground(new Color(22, 22, 22));
 
@@ -206,7 +198,6 @@ public class ClienteFrame extends JFrame {
         splitPane.setLeftComponent(panelIzq);
         splitPane.setRightComponent(panelDer);
 
-        // ─── PANEL NORTE COMPUESTO ───────────────────────────────
         JPanel panelNorte = new JPanel(new BorderLayout());
         panelNorte.add(panelTop, BorderLayout.NORTH);
         panelNorte.add(panelBusqueda, BorderLayout.SOUTH);
@@ -214,7 +205,6 @@ public class ClienteFrame extends JFrame {
         add(panelNorte, BorderLayout.NORTH);
         add(splitPane, BorderLayout.CENTER);
 
-        // ─── ACCIONES ────────────────────────────────────────────
         btnBuscar.addActionListener(e -> realizarBusqueda());
         txtBuscar.addActionListener(e -> realizarBusqueda());
         btnTodos.addActionListener(e -> {
@@ -256,7 +246,6 @@ public class ClienteFrame extends JFrame {
                 return;
             }
             String nombreProducto = (String) modeloCarrito.getValueAt(fila, 0);
-            // Buscar el id por nombre en el carrito
             for (ItemCarrito item : tienda.getCarrito().getItems()) {
                 if (item.getProducto().getNombre().equals(nombreProducto)) {
                     tienda.quitarDelCarrito(item.getProducto().getId());

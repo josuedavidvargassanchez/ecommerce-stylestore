@@ -1,16 +1,12 @@
 package modelo;
 
-/**
- * Producto de tipo Accesorio (bolsos, cinturones, joyería, etc.)
- * Aplica: Herencia (extends Producto), Polimorfismo (@Override)
- */
 public class Accesorio extends Producto {
     private static final long serialVersionUID = 1L;
 
-    private String tipo;       // Bolso, Cinturón, Gorra, Reloj, Collar, etc.
+    private String tipo;       
     private String color;
     private String material;
-    private String dimensiones; // Ej: "30cm x 20cm"
+    private String dimensiones; 
 
     public Accesorio(String id, String nombre, String descripcion, double precio,
                      int stock, String categoria, String marca,
@@ -33,7 +29,6 @@ public class Accesorio extends Producto {
                " | Material: " + material + " | Dim: " + dimensiones;
     }
 
-    // Getters y Setters
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
     public String getColor() { return color; }

@@ -1,16 +1,12 @@
 package modelo;
 
-/**
- * Producto de tipo Ropa.
- * Aplica: Herencia (extends Producto), Polimorfismo (@Override)
- */
 public class Ropa extends Producto {
     private static final long serialVersionUID = 1L;
 
-    private String talla;   // XS, S, M, L, XL, XXL
+    private String talla;   
     private String color;
-    private String material; // algodón, poliéster, lino, etc.
-    private String genero;   // Hombre, Mujer, Unisex, Niño
+    private String material; 
+    private String genero;   
 
     public Ropa(String id, String nombre, String descripcion, double precio,
                 int stock, String categoria, String marca,
@@ -33,7 +29,6 @@ public class Ropa extends Producto {
                " | Material: " + material + " | Género: " + genero;
     }
 
-    // Getters y Setters
     public String getTalla() { return talla; }
     public void setTalla(String talla) { this.talla = talla; }
     public String getColor() { return color; }

@@ -2,10 +2,6 @@ package modelo;
 
 import java.io.Serializable;
 
-/**
- * Clase abstracta base para todos los usuarios del sistema.
- * Aplica: Abstracción, Encapsulación
- */
 public abstract class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -21,7 +17,6 @@ public abstract class Usuario implements Serializable {
         this.password = password;
     }
 
-    // Getters y Setters — Encapsulación
     public String getId() { return id; }
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
@@ -30,7 +25,6 @@ public abstract class Usuario implements Serializable {
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 
-    // Método abstracto — Abstracción y Polimorfismo
     public abstract String getRol();
 
     @Override

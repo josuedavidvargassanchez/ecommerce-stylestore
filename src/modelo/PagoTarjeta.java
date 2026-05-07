@@ -1,15 +1,11 @@
 package modelo;
 
-/**
- * Pago con tarjeta de crédito/débito.
- * Aplica: Herencia, Polimorfismo (@Override)
- */
 public class PagoTarjeta extends Pago {
     private static final long serialVersionUID = 1L;
 
-    private String numeroTarjeta; // Solo últimos 4 dígitos por seguridad
+    private String numeroTarjeta; 
     private String nombreTitular;
-    private String tipoTarjeta; // Crédito / Débito
+    private String tipoTarjeta; 
 
     public PagoTarjeta(double monto, String fecha, String numeroTarjeta,
                        String nombreTitular, String tipoTarjeta) {

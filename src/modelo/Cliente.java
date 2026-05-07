@@ -2,10 +2,6 @@ package modelo;
 
 import java.util.ArrayList;
 
-/**
- * Cliente del sistema — puede comprar productos.
- * Aplica: Herencia (extends Usuario), Colecciones
- */
 public class Cliente extends Usuario {
     private static final long serialVersionUID = 1L;
 

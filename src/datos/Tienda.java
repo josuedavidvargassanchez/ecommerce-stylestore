@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
-/**
- * Controlador principal del sistema de la tienda.
- * Maneja toda la lógica de negocio.
- */
 public class Tienda {
 
     private ArrayList<Producto> productos;
@@ -33,13 +29,11 @@ public class Tienda {
     }
 
     private void inicializarDatosPorDefecto() {
-        // Crear admin por defecto si no hay usuarios
         if (usuarios.isEmpty()) {
             usuarios.add(new Administrador("A001", "Admin Principal",
                     "admin@stylestore.com", "admin123", "ADMIN2026"));
             GestorDatos.guardarUsuarios(usuarios);
         }
-        // Agregar productos de muestra si la tienda está vacía
         if (productos.isEmpty()) {
             agregarProductosMuestra();
         }
@@ -68,8 +62,6 @@ public class Tienda {
                 40000, 35, "Sandalias", "BeachWalk", 42, "Café", "Caucho/Tela", "Hombre"));
         GestorDatos.guardarProductos(productos);
     }
-
-    // ─── AUTENTICACIÓN ──────────────────────────────────────────
 
     public Usuario iniciarSesion(String email, String password)
             throws AutenticacionException {
@@ -109,8 +101,6 @@ public class Tienda {
         sesionActual = null;
         carritoActual = null;
     }
-
-    // ─── PRODUCTOS ──────────────────────────────────────────────
 
     public ArrayList<Producto> getProductos() { return productos; }
 
@@ -171,8 +161,6 @@ public class Tienda {
         throw new ProductoNoEncontradoException("Producto no encontrado: " + id);
     }
 
-    // ─── CARRITO ────────────────────────────────────────────────
-
     public Carrito getCarrito() { return carritoActual; }
 
     public void agregarAlCarrito(Producto producto, int cantidad)
@@ -189,32 +177,26 @@ public class Tienda {
         carritoActual.actualizarCantidad(productoId, cantidad);
     }
 
-    // ─── PEDIDOS ────────────────────────────────────────────────
-
     public Pedido confirmarPedido(Pago pago, String direccionEntrega)
             throws StockInsuficienteException {
         if (carritoActual.estaVacio()) {
             throw new IllegalStateException("El carrito está vacío.");
         }
-        // Verificar stock final
         for (ItemCarrito item : carritoActual.getItems()) {
             if (!item.getProducto().hayStock(item.getCantidad())) {
                 throw new StockInsuficienteException(
                         "Stock insuficiente para: " + item.getProducto().getNombre());
             }
         }
-        // Descontar stock
         for (ItemCarrito item : carritoActual.getItems()) {
             item.getProducto().reducirStock(item.getCantidad());
         }
-        // Crear pedido
         String idPedido = "PED-" + System.currentTimeMillis();
         String fecha = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(new Date());
         Pedido pedido = new Pedido(idPedido, sesionActual.getId(),
                 sesionActual.getNombre(), carritoActual.getItems(),
                 carritoActual.getTotal(), pago, fecha, direccionEntrega);
 
-        // Asociar pedido al cliente
         if (sesionActual instanceof Cliente) {
             ((Cliente) sesionActual).agregarPedido(pedido);
         }
@@ -249,8 +231,6 @@ public class Tienda {
         }
         throw new ProductoNoEncontradoException("Pedido no encontrado: " + pedidoId);
     }
-
-    // ─── USUARIOS ───────────────────────────────────────────────
 
     public ArrayList<Usuario> getUsuarios() { return usuarios; }
     public Usuario getSesionActual() { return sesionActual; }

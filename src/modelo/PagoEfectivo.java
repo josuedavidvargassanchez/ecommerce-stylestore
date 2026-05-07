@@ -1,9 +1,5 @@
 package modelo;
 
-/**
- * Pago contra entrega en efectivo.
- * Aplica: Herencia, Polimorfismo (@Override)
- */
 public class PagoEfectivo extends Pago {
     private static final long serialVersionUID = 1L;
 

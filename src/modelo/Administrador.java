@@ -1,9 +1,5 @@
 package modelo;
 
-/**
- * Administrador del sistema — gestiona productos y pedidos.
- * Aplica: Herencia (extends Usuario)
- */
 public class Administrador extends Usuario {
     private static final long serialVersionUID = 1L;
 

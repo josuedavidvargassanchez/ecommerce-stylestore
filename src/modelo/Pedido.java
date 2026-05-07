@@ -3,10 +3,6 @@ package modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- * Pedido generado tras confirmar el carrito.
- * Aplica: Colecciones
- */
 public class Pedido implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -38,7 +34,6 @@ public class Pedido implements Serializable {
         this.direccionEntrega = direccionEntrega;
     }
 
-    // Getters y Setters
     public String getId() { return id; }
     public String getClienteId() { return clienteId; }
     public String getClienteNombre() { return clienteNombre; }
